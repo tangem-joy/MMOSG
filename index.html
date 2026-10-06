@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Scout Registration Form - Register for Scouting activities online." />
+  <title>Scout Registration Form</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Hind+Siliguri:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========== HERO HEADER ========== -->
+  <header class="hero-header" role="banner">
+    <div class="hero-bg-pattern" aria-hidden="true"></div>
+
+    <!-- Real Scout Group Logo -->
+    <div class="scout-emblem" aria-label="Mymensingh Metropolitan Open Scout Group logo">
+      <img
+        src="logo.png"
+        alt="Mymensingh Metropolitan Open Scout Group — EST 2025, Mymensingh Sadar"
+        class="hero-logo-img"
+        width="110"
+        height="110"
+      />
+    </div>
+
+    <div class="hero-text">
+      <h1 class="hero-title">Scout Registration Form</h1>
+      <p class="hero-subtitle">
+        Please provide the following information accurately to complete your registration.
+      </p>
+      <div class="hero-badges" aria-label="Form info">
+        <span class="badge"><span class="badge-dot"></span>Secure</span>
+        <span class="badge"><span class="badge-dot"></span>Free to Join</span>
+        <span class="badge"><span class="badge-dot"></span>2026 Batch</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== MAIN FORM CARD ========== -->
+  <main class="main-wrapper" role="main">
+    <div class="form-card" role="region" aria-label="Registration form">
+
+      <!-- Progress indicator -->
+      <div class="progress-bar-wrapper" aria-hidden="true">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+
+      <form id="registrationForm" novalidate autocomplete="off">
+
+        <!-- 1. Full Name -->
+        <div class="field-group" id="group-name">
+          <label class="field-label" for="name">
+            নাম <span class="required-star" aria-label="required">*</span>
+          </label>
+          <div class="input-wrapper">
+            <span class="input-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+            </span>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="field-input"
+              placeholder="আপনার পূর্ণ নাম লিখুন"
+              required
+              aria-required="true"
+              aria-describedby="name-error"
+              autocomplete="name"
+              maxlength="100"
+            />
+          </div>
+          <span class="field-error" id="name-error" role="alert" aria-live="polite"></span>
+        </div>
+
+        <!-- 2. Mobile Number -->
+        <div class="field-group" id="group-mobile">
+          <label class="field-label" for="mobile">
+            মোবাইল নাম্বার <span class="required-star" aria-label="required">*</span>
+          </label>
+          <div class="input-wrapper">
+            <span class="input-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                <line x1="12" y1="18" x2="12.01" y2="18"/>
+              </svg>
+            </span>
+            <input
+              type="tel"
+              id="mobile"
+              name="mobile"
+              class="field-input"
+              placeholder="01XXXXXXXXX"
+              required
+              aria-required="true"
+              aria-describedby="mobile-error mobile-hint"
+              autocomplete="tel"
+              maxlength="11"
+              inputmode="numeric"
+            />
+          </div>
+          <span class="field-hint" id="mobile-hint">বাংলাদেশি মোবাইল নম্বর (11 ডিজিট)</span>
+          <span class="field-error" id="mobile-error" role="alert" aria-live="polite"></span>
+        </div>
+
+        <!-- 3. WhatsApp Number -->
+        <div class="field-group" id="group-whatsapp">
+          <label class="field-label" for="whatsapp">
+            WhatsApp Number <span class="required-star" aria-label="required">*</span>
+          </label>
+          <div class="input-wrapper">
+            <span class="input-icon input-icon--whatsapp" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+              </svg>
+            </span>
+            <input
+              type="tel"
+              id="whatsapp"
+              name="whatsapp"
+              class="field-input"
+              placeholder="01XXXXXXXXX"
+              required
+              aria-required="true"
+              aria-describedby="whatsapp-error whatsapp-hint"
+              autocomplete="tel"
+              maxlength="11"
+              inputmode="numeric"
+            />
+          </div>
+          <span class="field-hint" id="whatsapp-hint">বাংলাদেশি হোয়াটসঅ্যাপ নম্বর (11 ডিজিট)</span>
+          <span class="field-error" id="whatsapp-error" role="alert" aria-live="polite"></span>
+        </div>
+
+        <!-- 4. Institution Name -->
+        <div class="field-group" id="group-institution">
+          <label class="field-label" for="institution">
+            প্রতিষ্ঠানের নাম <span class="required-star" aria-label="required">*</span>
+          </label>
+          <div class="input-wrapper">
+            <span class="input-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                <polyline points="9 22 9 12 15 12 15 22"/>
+              </svg>
+            </span>
+            <input
+              type="text"
+              id="institution"
+              name="institution"
+              class="field-input"
+              placeholder="আপনার প্রতিষ্ঠানের নাম লিখুন"
+              required
+              aria-required="true"
+              aria-describedby="institution-error"
+              maxlength="150"
+            />
+          </div>
+          <span class="field-error" id="institution-error" role="alert" aria-live="polite"></span>
+        </div>
+
+        <!-- 5. Current Class -->
+        <div class="field-group" id="group-class">
+          <label class="field-label" for="class">
+            বর্তমান ক্লাস <span class="required-star" aria-label="required">*</span>
+          </label>
+          <div class="input-wrapper select-wrapper">
+            <span class="input-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+              </svg>
+            </span>
+            <select
+              id="class"
+              name="class"
+              class="field-input field-select"
+              required
+              aria-required="true"
+              aria-describedby="class-error"
+            >
+              <option value="" disabled selected>-- ক্লাস নির্বাচন করুন --</option>
+              <option value="Class 6">Class 6 (ষষ্ঠ)</option>
+              <option value="Class 7">Class 7 (সপ্তম)</option>
+              <option value="Class 8">Class 8 (অষ্টম)</option>
+              <option value="Class 9">Class 9 (নবম)</option>
+              <option value="Class 10">Class 10 (দশম)</option>
+              <option value="Class 11">Class 11 (একাদশ)</option>
+              <option value="Class 12">Class 12 (দ্বাদশ)</option>
+              <option value="Diploma / Polytechnic">Diploma / Polytechnic</option>
+              <option value="University">University (বিশ্ববিদ্যালয়)</option>
+              <option value="Other">Other (অন্যান্য)</option>
+            </select>
+            <span class="select-chevron" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </span>
+          </div>
+          <span class="field-error" id="class-error" role="alert" aria-live="polite"></span>
+        </div>
+
+        <!-- 6. Subject / Group -->
+        <div class="field-group" id="group-subject">
+          <label class="field-label" for="subject_group">বিষয় / গ্রুপ</label>
+          <div class="input-wrapper">
+            <span class="input-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="8" y1="6" x2="21" y2="6"/>
+                <line x1="8" y1="12" x2="21" y2="12"/>
+                <line x1="8" y1="18" x2="21" y2="18"/>
+                <line x1="3" y1="6" x2="3.01" y2="6"/>
+                <line x1="3" y1="12" x2="3.01" y2="12"/>
+                <line x1="3" y1="18" x2="3.01" y2="18"/>
+              </svg>
+            </span>
+            <input
+              type="text"
+              id="subject_group"
+              name="subject_group"
+              class="field-input"
+              placeholder="যেমন: Science, Humanities, Business Studies"
+              aria-describedby="subject-hint"
+              maxlength="100"
+            />
+          </div>
+          <span class="field-hint" id="subject-hint">ঐচ্ছিক — আপনার বিষয় বা গ্রুপ উল্লেখ করুন।</span>
+        </div>
+
+        <!-- 7. Gender -->
+        <div class="field-group" id="group-gender">
+          <fieldset class="radio-fieldset">
+            <legend class="field-label">
+              জেন্ডার <span class="required-star" aria-label="required">*</span>
+            </legend>
+            <div class="radio-group" role="radiogroup" aria-describedby="gender-error">
+              <label class="radio-card" for="gender-male">
+                <input
+                  type="radio"
+                  id="gender-male"
+                  name="gender"
+                  value="ছেলে"
+                  class="radio-input"
+                  required
+                  aria-required="true"
+                />
+                <span class="radio-custom" aria-hidden="true"></span>
+                <span class="radio-label-text">
+                  <span class="radio-icon" aria-hidden="true">👦</span> ছেলে
+                </span>
+              </label>
+
+              <label class="radio-card" for="gender-female">
+                <input
+                  type="radio"
+                  id="gender-female"
+                  name="gender"
+                  value="মেয়ে"
+                  class="radio-input"
+                />
+                <span class="radio-custom" aria-hidden="true"></span>
+                <span class="radio-label-text">
+                  <span class="radio-icon" aria-hidden="true">👧</span> মেয়ে
+                </span>
+              </label>
+            </div>
+            <span class="field-error" id="gender-error" role="alert" aria-live="polite"></span>
+          </fieldset>
+        </div>
+
+        <!-- 8. Previous Scouting Experience -->
+        <div class="field-group" id="group-experience">
+          <fieldset class="radio-fieldset">
+            <legend class="field-label">
+              পূর্বে স্কাউটিং এর অভিজ্ঞতা আছে? <span class="required-star" aria-label="required">*</span>
+            </legend>
+            <div class="radio-group" role="radiogroup" aria-describedby="experience-error">
+              <label class="radio-card" for="exp-yes">
+                <input
+                  type="radio"
+                  id="exp-yes"
+                  name="scouting_experience"
+                  value="হ্যাঁ"
+                  class="radio-input"
+                  required
+                  aria-required="true"
+                />
+                <span class="radio-custom" aria-hidden="true"></span>
+                <span class="radio-label-text">
+                  <span class="radio-icon" aria-hidden="true">✅</span> হ্যাঁ
+                </span>
+              </label>
+
+              <label class="radio-card" for="exp-no">
+                <input
+                  type="radio"
+                  id="exp-no"
+                  name="scouting_experience"
+                  value="না"
+                  class="radio-input"
+                />
+                <span class="radio-custom" aria-hidden="true"></span>
+                <span class="radio-label-text">
+                  <span class="radio-icon" aria-hidden="true">❌</span> না
+                </span>
+              </label>
+            </div>
+            <span class="field-error" id="experience-error" role="alert" aria-live="polite"></span>
+          </fieldset>
+        </div>
+
+        <!-- 7b. Scouting Details (conditional) -->
+        <div class="field-group field-group--conditional" id="group-details" aria-live="polite">
+          <label class="field-label" for="scouting_details">
+            স্কাউটিংয়ের অভিজ্ঞতা সংক্ষেপে লিখুন
+          </label>
+          <div class="input-wrapper">
+            <textarea
+              id="scouting_details"
+              name="scouting_details"
+              class="field-input field-textarea"
+              placeholder="আপনার স্কাউটিং অভিজ্ঞতা সম্পর্কে সংক্ষেপে লিখুন..."
+              rows="4"
+              maxlength="500"
+              aria-describedby="details-counter"
+            ></textarea>
+          </div>
+          <span class="field-hint char-counter" id="details-counter">
+            <span id="detailsCount">0</span> / 500 characters
+          </span>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="submit-wrapper">
+          <button type="submit" id="submitBtn" class="submit-btn" aria-label="Submit registration form">
+            <span class="btn-text">নিবন্ধন সম্পন্ন করুন</span>
+            <span class="btn-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="22" y1="2" x2="11" y2="13"/>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+              </svg>
+            </span>
+            <span class="btn-spinner" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <circle cx="12" cy="12" r="10" stroke-opacity="0.25"/>
+                <path d="M12 2a10 10 0 0 1 10 10" stroke-linecap="round"/>
+              </svg>
+            </span>
+          </button>
+        </div>
+
+      </form>
+
+      <!-- Toast / Alert Messages -->
+      <div id="toastContainer" class="toast-container" aria-live="assertive" aria-atomic="true"></div>
+
+    </div>
+
+    <p class="form-footer-note">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" aria-hidden="true">
+        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+        <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+      </svg>
+      Your data is secured and used solely for Scout registration purposes.
+    </p>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
